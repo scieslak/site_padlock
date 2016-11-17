@@ -1,0 +1,14 @@
+language: ruby
+rvm:
+- 2.3.1
+- 2.3.0
+- 2.2.2
+script:
+- cd test/dummy/
+- bundle exec rake railties:install:migrations
+- bundle exec rake db:migrate
+- cd ../../
+- bundle exec rake test
+env:
+  global:
+    - COVERAGE=true
