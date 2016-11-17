@@ -11,10 +11,10 @@ if ENV["COVERAGE"]
   end
   ENV['CODECLIMATE_REPO_TOKEN'] = ENV['CODECLIMATE_SITE_PADLOCK']
   CodeClimate::TestReporter.start
- end
+end
 
- require "minitest/reporters"
- Minitest::Reporters.use!
+require "minitest/reporters"
+Minitest::Reporters.use!
 
 require File.expand_path("../../test/dummy/config/environment.rb", __FILE__)
 ActiveRecord::Migrator.migrations_paths = [File.expand_path("../../test/dummy/db/migrate", __FILE__)]
