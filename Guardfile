@@ -8,7 +8,8 @@ guard :minitest, spring: "bin/rails test", all_on_start: false do
 
   # Tests trigered by model update
   watch(%r{^app/models/(?<name>.+)\.rb$}) do |m|
-    any_test(m[:name], "models")
+    any_test(m[:name], "models") +
+    any_test(m[:name], "models/#{m[:name]}")
   end
 
 end
@@ -19,5 +20,5 @@ end
 def any_test(match=nil, path=nil)
   match = "*" unless match
   path << "/" if path
-  Dir.glob("test/#{path}#{match}_test.rb")
+  Dir.glob("test/#{path}*#{match}_test.rb")
 end

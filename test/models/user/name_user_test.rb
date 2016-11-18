@@ -1,3 +1,5 @@
+# Name validations tests
+
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
@@ -5,7 +7,7 @@ class UserTest < ActiveSupport::TestCase
     @user = users(:one)
   end
 
-  test "user should be valid" do
+  test "user should not be valid" do
     assert @user.valid?
   end
 
