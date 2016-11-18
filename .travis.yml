@@ -5,7 +5,7 @@ rvm:
 - 2.2.2
 script:
 - cd test/dummy/
-- bundle exec rails site_padlock_engine:install:migrations
+- bundle exec rails railties:install:migrations
 - bundle exec rails db:migrate
 - cd ../../
 - bundle exec rails test
