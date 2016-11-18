@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = SitePadlock::VERSION
   s.authors     = ["scieslak"]
   s.email       = ["sitepadlock@gmail.com"]
-  s.homepage    = "http://scieslak.com"
+  s.homepage    = "https://github.com/scieslak/site_padlock"
   s.summary     = "SitePadlock, easy website authentication"
   s.description = "SitePadlock is a Ruby on Rails engine, providing a quick and easy implementation of bcrypt based authentications system on a personal website."
   s.license     = "MIT"
