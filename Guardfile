@@ -4,7 +4,11 @@ guard :minitest, spring: "bin/rails test", all_on_start: false do
   watch(%r{^test/.+_test\.rb$})
   watch(%r{^test/(.*)\/?test_(.*)\.rb$})
 
+  # All tests trigered by test_helper.rb update
   watch(%r{^test/test_helper\.rb$}) { 'test' }
+
+  # All tests trigered by fixtures update
+  watch(%r{^test/fixtures/(.*)\.yml$}) { 'test' }
 
   # Tests trigered by model update
   watch(%r{^app/models/(?<name>.+)\.rb$}) do |m|
