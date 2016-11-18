@@ -19,7 +19,9 @@ Gem::Specification.new do |s|
   s.add_dependency "rails", "~> 5.0.0", ">= 5.0.0.1"
 
   s.add_development_dependency "sqlite3"
-  s.add_development_dependency 'minitest-reporters', '1.1.12'
-  s.add_development_dependency 'simplecov'
-  s.add_development_dependency 'codeclimate-test-reporter', '0.4.8'
+  s.add_development_dependency 'guard',                      '2.14'
+  s.add_development_dependency 'guard-minitest',             '2.4.6'
+  s.add_development_dependency 'minitest-reporters',         '1.1.12'
+  s.add_development_dependency 'simplecov',                  '0.12.0'
+  s.add_development_dependency 'codeclimate-test-reporter',  '0.4.8'
 end

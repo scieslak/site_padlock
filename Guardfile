@@ -1,0 +1,23 @@
+
+guard :minitest, spring: "bin/rails test", all_on_start: false do
+
+  watch(%r{^test/.+_test\.rb$})
+  watch(%r{^test/(.*)\/?test_(.*)\.rb$})
+
+  watch(%r{^test/test_helper\.rb$}) { 'test' }
+
+  # Tests trigered by model update
+  watch(%r{^app/models/(?<name>.+)\.rb$}) do |m|
+    any_test(m[:name], "models")
+  end
+
+end
+
+#=============================================================================#
+
+# Returns array of file names matching provided name and path
+def any_test(match=nil, path=nil)
+  match = "*" unless match
+  path << "/" if path
+  Dir.glob("test/#{path}#{match}_test.rb")
+end
