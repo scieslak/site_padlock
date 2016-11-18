@@ -6,7 +6,7 @@ rvm:
 script:
 - cd test/dummy/
 - bundle exec rake railties:install:migrations
-- bundle exec rake db:migrate
+- bundle exec rails db:migrate
 - cd ../../
 - bundle exec rake test
 env:
