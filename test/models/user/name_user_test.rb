@@ -4,8 +4,7 @@ require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
   def setup
-    @user = users(:one)
-    @another_user = users(:two)
+    setup_model_test
   end
 
   test "name must be present" do

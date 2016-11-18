@@ -14,6 +14,11 @@ validates :email, presence: true,
                   format: { with: VALID_EMAIL_REGEX },
                   uniqueness: { case_sensitive: false }
 
+# Password validations
+validates :password, presence: true,
+                     length: { minimum: 6 },
+                     allow_nil: true
+has_secure_password
 
 
   def downcase_email
