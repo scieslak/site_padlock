@@ -19,7 +19,10 @@ $ bundle
 ```
 
 ## Contributing
-TODO
+- Fork it
+- Write your changes
+- Commit
+- Send a pull request
 
 ## License
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
