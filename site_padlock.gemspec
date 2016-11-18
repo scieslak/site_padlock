@@ -23,6 +23,8 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'guard',                      '2.14'
   s.add_development_dependency 'guard-minitest',             '2.4.6'
   s.add_development_dependency 'minitest-reporters',         '1.1.12'
+  s.add_development_dependency 'rails-controller-testing',   '1.0.1'
+  s.add_development_dependency 'capybara',                   '2.7.1'
   s.add_development_dependency 'simplecov',                  '0.12.0'
   s.add_development_dependency 'codeclimate-test-reporter',  '0.4.8'
 end

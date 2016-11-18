@@ -32,6 +32,15 @@ if ActiveSupport::TestCase.respond_to?(:fixture_path=)
   ActiveSupport::TestCase.fixtures :all
 end
 
+require 'capybara/rails'
+class ActionDispatch::IntegrationTest
+  include Capybara::DSL
+  def teardown
+    Capybara.reset_sessions!
+    Capybara.use_default_driver
+  end
+end
+
 #==============================================================================#
 
 def setup_model_test
