@@ -9,8 +9,8 @@ class UserTest < ActiveSupport::TestCase
 
   test "password should be present" do
     new_user = User.new(name: "John",
-                         email: "smith@ex.com",
-                         password: nil)
+                        email: "smith@ex.com",
+                        password: nil)
     assert new_user.new_record?
     assert_not new_user.valid?
   end

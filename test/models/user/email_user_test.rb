@@ -4,7 +4,9 @@ require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
   def setup
-    setup_model_test
+    @user = users(:one)
+    @another_user = users(:two)
+    @user.password = 'password'
   end
 
   test "email should be present" do
@@ -64,9 +66,10 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "email should be unique" do
-    @user.save
-    @another_user.email = @user.email
-    assert_not @another_user.valid?
+    new_user = User.new(name: "John",
+                        email: @user.email,
+                        password: "password")
+    assert_not new_user.valid?
   end
 
 end
