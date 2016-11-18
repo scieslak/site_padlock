@@ -4,7 +4,7 @@
 SitePadlock is a Ruby on Rails engine, providing a quick and easy implementation of bcrypt based authentications system on a personal website.
 
 ## Usage
-SitePadlock is built with Ruby on Rails 5 and for Ruby on Rails 5 aplication
+SitePadlock is built with Ruby on Rails 5 and for Ruby on Rails 5 application
 
 ## Installation
 Add this line to your application's Gemfile:
