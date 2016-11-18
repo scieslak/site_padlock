@@ -1,8 +1,10 @@
+[![Build Status](https://travis-ci.org/scieslak/site_padlock.svg?branch=master)](https://travis-ci.org/scieslak/site_padlock) [![Code Climate](https://codeclimate.com/github/scieslak/site_padlock/badges/gpa.svg)](https://codeclimate.com/github/scieslak/site_padlock) [![Test Coverage](https://codeclimate.com/github/scieslak/site_padlock/badges/coverage.svg)](https://codeclimate.com/github/scieslak/site_padlock/coverage) [![Issue Count](https://codeclimate.com/github/scieslak/site_padlock/badges/issue_count.svg)](https://codeclimate.com/github/scieslak/site_padlock)
+
 # SitePadlock
-Short description and motivation.
+SitePadlock is a Ruby on Rails engine, providing a quick and easy implementation of bcrypt based authentications system on a personal website.
 
 ## Usage
-How to use my plugin.
+SitePadlock is built with Ruby on Rails 5 and for Ruby on Rails 5 aplication
 
 ## Installation
 Add this line to your application's Gemfile:
@@ -16,13 +18,8 @@ And then execute:
 $ bundle
 ```
 
-Or install it yourself as:
-```bash
-$ gem install site_padlock
-```
-
 ## Contributing
-Contribution directions go here.
+TODO
 
 ## License
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
