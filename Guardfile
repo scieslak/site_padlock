@@ -16,6 +16,12 @@ guard :minitest, spring: "bin/rails test", all_on_start: false do
     any_test(m[:name], "models/#{m[:name]}")
   end
 
+  # Tests trigered by routes.rb update
+  watch(%r{^config/routes.rb$}) do
+    any_test(nil, "controllers") +
+    any_test(nil, "integration")
+  end
+
 end
 
 #=============================================================================#
