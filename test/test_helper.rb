@@ -1,6 +1,7 @@
 # Configure Rails Environment
 ENV["RAILS_ENV"] = "test"
 
+########################### SIMPLECOV & CODECLIMATE >>>>>>>>>>>>>>>>>>>>>>>>>>>
 require 'simplecov'
 require "codeclimate-test-reporter"
 
@@ -13,9 +14,11 @@ if ENV["COVERAGE"]
   CodeClimate::TestReporter.start
 end
 
+########################### MINITEST REPORTERS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 require "minitest/reporters"
 Minitest::Reporters.use!
 
+########################### RAILS DEFAULT >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 require File.expand_path("../../test/dummy/config/environment.rb", __FILE__)
 ActiveRecord::Migrator.migrations_paths = [File.expand_path("../../test/dummy/db/migrate", __FILE__)]
 require "rails/test_help"
@@ -32,6 +35,7 @@ if ActiveSupport::TestCase.respond_to?(:fixture_path=)
   ActiveSupport::TestCase.fixtures :all
 end
 
+########################### CAPYBARA >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 require 'capybara/rails'
 class ActionDispatch::IntegrationTest
   include Capybara::DSL
@@ -41,7 +45,8 @@ class ActionDispatch::IntegrationTest
   end
 end
 
-#==============================================================================#
+
+########################### Cu5ToM HELPER METHODS >>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 def valid_user
   User.new(name: "John Smith",
@@ -55,4 +60,11 @@ def invalid_user
            email: "INVALID_EMAIL",
            password: "password",
            password_confirmation: "password")
+end
+
+def fill_user_form_as(user)
+  fill_in "Name",                  with: user.name
+  fill_in "Email",                 with: user.email
+  fill_in "Password",              with: user.password
+  fill_in "Password confirmation", with: user.password_confirmation
 end

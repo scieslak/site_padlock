@@ -4,23 +4,20 @@ class UserRegistrationTest < ActionDispatch::IntegrationTest
 
   test "user should register providing valid information" do
     visit new_user_path
-    fill_user_form(valid_user)
+    fill_user_form_as(valid_user)
     click_button "Register"
 
+    assert_equal user_path(User.last.reload.id), current_path
+    assert page.has_no_css?('form#new_user')
   end
 
   test "user should not register without valid information" do
     visit new_user_path
-
-    fill_user_form(invalid_user)
+    fill_user_form_as(invalid_user)
     click_button "Register"
+
+    refute_equal user_path(User.last.reload.id), current_path
+    assert page.has_css?('form#new_user')
+
   end
-end
-
-
-def fill_user_form(user)
-  fill_in "Name",                  with: user.name
-  fill_in "Email",                 with: user.email
-  fill_in "Password",              with: user.password
-  fill_in "Password confirmation", with: user.password_confirmation
 end
