@@ -2,7 +2,7 @@ require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
   def setup
-    @user = users(:one)
+    @user = valid_user
   end
 
   test "user should be valid" do
@@ -10,3 +10,10 @@ class UserTest < ActiveSupport::TestCase
   end
 
 end
+
+#=================================================
+# For column specific validation tests see:
+#
+# user/name_user_test.rb
+# user/email_user_test.rb
+# user/passowrd_user_test.rb

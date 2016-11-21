@@ -1,22 +1,18 @@
-# Password validations tests
-
-require 'test_helper'
+# Opens UserTest class and adds password validations tests.
+# =============================================================================
 
 class UserTest < ActiveSupport::TestCase
-  def setup
-    setup_model_test
-  end
 
   test "password should be present" do
-    new_user = User.new(name: "John",
-                        email: "smith@ex.com",
-                        password: nil)
-    assert new_user.new_record?
-    assert_not new_user.valid?
+    @user.password = " "
+    assert_not @user.valid?
   end
 
   test "password can be blank when updating profile" do
+    # Pull existing user from fixtures
+    @user = users(:one)
     @user.password = ""
+    @user.password_confirmation = ""
     assert_not @user.new_record?
     assert @user.valid?
   end

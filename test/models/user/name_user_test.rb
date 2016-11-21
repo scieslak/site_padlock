@@ -1,11 +1,7 @@
-# Name validations tests
-
-require 'test_helper'
+# Opens UserTest class and adds name validations tests.
+# =============================================================================
 
 class UserTest < ActiveSupport::TestCase
-  def setup
-    setup_model_test
-  end
 
   test "name must be present" do
     @user.name = "   "

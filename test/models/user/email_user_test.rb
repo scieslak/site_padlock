@@ -1,16 +1,15 @@
-# Email validations tests
-
-require 'test_helper'
+# Opens UserTest class and adds email validations tests.
+# =============================================================================
 
 class UserTest < ActiveSupport::TestCase
-  def setup
-    @user = users(:one)
-    @another_user = users(:two)
-    @user.password = 'password'
-  end
 
   test "email should be present" do
     @user.email = "  "
+    assert_not @user.valid?
+  end
+
+  test "email should be unique" do
+    @user.email =  users(:one).email
     assert_not @user.valid?
   end
 
@@ -63,13 +62,6 @@ class UserTest < ActiveSupport::TestCase
     @user.email = mix_case_email
     @user.save
     assert_equal mix_case_email.downcase, @user.reload.email
-  end
-
-  test "email should be unique" do
-    new_user = User.new(name: "John",
-                        email: @user.email,
-                        password: "password")
-    assert_not new_user.valid?
   end
 
 end
