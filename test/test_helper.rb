@@ -43,8 +43,16 @@ end
 
 #==============================================================================#
 
-def setup_model_test
-  @user = users(:one)
-  @another_user = users(:two)
-  @user.password = 'password'
+def valid_user
+  User.new(name: "John Smith",
+           email: "js@example.com",
+           password: "password",
+           password_confirmation: "password")
+end
+
+def invalid_user
+  User.new(name: "John Smith",
+           email: "INVALID_EMAIL",
+           password: "password",
+           password_confirmation: "password")
 end
