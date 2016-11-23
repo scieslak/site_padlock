@@ -8,6 +8,8 @@ default: &default
 
 one:
   <<: *default
+  id: 1
 
 two:
   <<: *default
+  id: 2
